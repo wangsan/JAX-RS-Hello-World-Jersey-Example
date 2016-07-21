@@ -7,7 +7,7 @@ public class MyTestJSONObject {
 	String thing_id; 
 	String thing_value;
 	
-	@ApiModelProperty(example="A serial number like 12345")
+	@ApiModelProperty(example="A serial number like 12345", required=true)
 	public String getThing_id() {
 		return thing_id;
 	}
@@ -16,7 +16,7 @@ public class MyTestJSONObject {
 		this.thing_id = thing_id;
 	}
 
-	@ApiModelProperty(example="This can be any string")
+	@ApiModelProperty(example="This can be any string", required=true)
 	public String getThing_value() {
 		return thing_value;
 	}
