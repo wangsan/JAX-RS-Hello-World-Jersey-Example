@@ -13,8 +13,9 @@ public class HelloWorldService {
 
 	@GET
 	@Path("/{param}")
-  //@Value("This command prints the message that you include in the {param} URL parameter.")
-  @ApiOperation(value="This command prints the message that you include in the {param} URL parameter.")
+    @ApiOperation(
+    		value="This command prints the message that you include in the {param} URL parameter.",
+    		notes="It's a really simple command.")
 	public Response getMsg(@PathParam("param") String msg) {
 
 		String output = "Jersey say : " + msg;
