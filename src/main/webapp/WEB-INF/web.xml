@@ -32,7 +32,7 @@
 			</init-param>
 			<init-param>
 					<param-name>swagger.api.basepath</param-name>
-					<param-value>http://localhost:8080/RESTfulExample/rest</param-value>
+					<param-value>http://tpm-sample-app.rtp.raleigh.ibm.com:8080/RESTfulExample/rest</param-value>
 			</init-param>
 			<load-on-startup>2</load-on-startup>
 	</servlet>
