@@ -46,17 +46,17 @@ public class HelloWorldService {
 					@ApiResponse(code = 200, message = "It's all good")
 			})
 	public Response simplePost(
-//			@ApiParam(value="Input JSON", required=true)
-			String inputJsonString
+			@ApiParam(value="Input JSON", required=true)
+			MyTestJSONObject inputJson
 			){
 		String output;
-		try {
-			JSONObject inputJson = new JSONObject(inputJsonString);
-			output = "Hello! I got your file. The contents are: "+ inputJson.toString();
-		} catch (JSONException e) {
-			String errorMessage = "Bad JSON!";
-			return Response.status(400).entity(errorMessage).build();
-		}
+//		try {
+			output = "Hello! I got your file.\nThe value of thing_id is "+inputJson.getThing_id()+
+					"\nand the value of thing_value is "+inputJson.getThing_value();
+//		} catch (JSONException e) {
+//			String errorMessage = "Bad JSON!";
+//			return Response.status(400).entity(errorMessage).build();
+//		}
 		return Response.status(200).entity(output).build();
 	}
 	
