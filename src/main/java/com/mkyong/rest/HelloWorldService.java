@@ -38,7 +38,7 @@ public class HelloWorldService {
 //	@Produces({MediaType.APPLICATION_JSON})
 	@ApiOperation(
 			value="Post a JSON file and get a response",
-			notes="Pass something interesting!"
+			notes="Pass something interesting!\n## Hello!"
 			)
 	@ApiResponses(
 			value = { 
