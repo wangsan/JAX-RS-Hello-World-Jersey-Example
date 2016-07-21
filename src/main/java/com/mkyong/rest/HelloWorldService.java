@@ -38,7 +38,19 @@ public class HelloWorldService {
 //	@Produces({MediaType.APPLICATION_JSON})
 	@ApiOperation(
 			value="Post a JSON file and get a response",
-			notes="Pass something interesting!\n## Hello!"
+			notes="##Pass something interesting!\n"+
+			"This is a simple method I wrote to test posting JSON and documenting it with Swagger.\n\n"+
+			"Markdown can do cool stuff like:\n"+
+			"* Bulleted lists\n"+
+			"* Inline `code examples`\n\n"+
+			"  * Sub-lists\n"+
+			"  * Sub-lists\n"+
+			"## Even tables!\n\n"+
+			"| Tables | Are | Cool |"+
+			"| ---- |:----:| ----:|"+
+			"| col 3 is | right-aligned | $1600 |"+
+			"| col 2 is | centered | $12 |"+
+			"| zebra stripes | are neat | $1 |"
 			)
 	@ApiResponses(
 			value = { 
