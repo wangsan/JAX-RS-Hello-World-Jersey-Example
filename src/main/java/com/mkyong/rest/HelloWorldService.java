@@ -44,12 +44,12 @@ public class HelloWorldService {
 			"* Bulleted lists\n"+
 			"* Inline `code examples`\n\n"+
 			"  * Sub-lists\n"+
-			"  * Sub-lists\n"+
+			"  * Sub-lists\n\n"+
 			"## Even tables!\n\n"+
-			"| Tables | Are | Cool |"+
-			"| ---- |:----:| ----:|"+
-			"| col 3 is | right-aligned | $1600 |"+
-			"| col 2 is | centered | $12 |"+
+			"| Tables | Are | Cool |\n"+
+			"| ---- |:----:| ----:|\n"+
+			"| col 3 is | right-aligned | $1600 |\n"+
+			"| col 2 is | centered | $12 |\n"+
 			"| zebra stripes | are neat | $1 |"
 			)
 	@ApiResponses(
