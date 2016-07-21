@@ -26,12 +26,12 @@ public class HelloWorldService {
     		notes="It's a really simple command.")
 	public Response getMsg(@PathParam("param") String msg) {
 
-		String output = "Yor path parameter was : " + msg;
+		String output = "Your path parameter was : " + msg;
 
 		return Response.status(200).entity(output).build();
 
 	}
-	
+
 	@POST
 	@Path("/simplePost")
 	@Consumes({MediaType.APPLICATION_JSON})
@@ -53,7 +53,7 @@ public class HelloWorldService {
 			"| zebra stripes | are neat | $1 |"
 			)
 	@ApiResponses(
-			value = { 
+			value = {
 					@ApiResponse(code = 400, message = "Invalid input"),
 					@ApiResponse(code = 200, message = "It's all good")
 			})
@@ -71,7 +71,7 @@ public class HelloWorldService {
 //		}
 		return Response.status(200).entity(output).build();
 	}
-	
+
 	@GET
 	@Path("/hidden")
 	@ApiOperation(
