@@ -26,7 +26,9 @@ public class HelloWorldService {
 	
 	@GET
 	@Path("/hidden")
-	@ApiOperation(value="This is a hidden method that you should not see in the API doc")
+	@ApiOperation(
+			value="This is a hidden method that you should not see in the API doc",
+			hidden=true)
 	public Response hiddenCommand(){
 		String output = "You found the hidden method!";
 		return Response.status(200).entity(output).build();
