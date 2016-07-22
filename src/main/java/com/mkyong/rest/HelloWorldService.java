@@ -1,19 +1,18 @@
 package com.mkyong.rest;
 
-import io.swagger.annotations.*;
-import io.swagger.util.Json;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.Response;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 @Path("/hello")
 @Api(value="/hello")
@@ -70,6 +69,26 @@ public class HelloWorldService {
 //			return Response.status(400).entity(errorMessage).build();
 //		}
 		return Response.status(200).entity(output).build();
+	}
+
+	@POST
+	@Path("/paramtest")
+	@Consumes({MediaType.APPLICATION_JSON})
+	@ApiOperation(
+			value="This command takes parameters and does stuff with them",
+			notes="It's a slightly more complicated command.")
+	@ApiResponses(
+			value = {
+					@ApiResponse(code = 400, message = "Invalid input"),
+					@ApiResponse(code = 200, message = "It's all good")
+			})
+	public Response paramtest(
+			@ApiParam(value="Input JSON", required=true)
+			SomeOtherJSONObject inputJson
+			){
+
+		return Response.status(200).entity(inputJson.toString()).build();
+
 	}
 
 	@GET
