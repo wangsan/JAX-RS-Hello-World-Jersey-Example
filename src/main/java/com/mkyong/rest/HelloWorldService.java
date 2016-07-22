@@ -2,9 +2,11 @@ package com.mkyong.rest;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.HeaderParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -89,6 +91,35 @@ public class HelloWorldService {
 
 		return Response.status(200).entity(inputJson.toString()).build();
 
+	}
+	
+	@GET
+	@Path("/pathparams/{pathParamString}")
+	@ApiOperation(
+			value="This command takes URL parameters and does stuff with them",
+			notes="It's a *cool* `command`.")
+	@ApiResponses(
+			value = {
+					@ApiResponse(code = 400, message = "Invalid input"),
+					@ApiResponse(code = 200, message = "It's all good")
+			})
+	public Response pathparams(
+			@ApiParam(value="This is a parameter that you put in the URL with ?queryParam{somevalue}")
+			@QueryParam("queryParam")
+			String queryParamString,
+			@ApiParam(value="This is a parameter that you add to the base URL, as in '/hello/pathparams/{somestring}")
+			@PathParam("pathParamString")
+			String pathParamString,
+			@ApiParam(value="This is the value of the Referer header")
+			@HeaderParam("Referer")
+			String referer
+			){
+		
+		String output = "Here are the parameters you sent:\n"+
+		"queryParamString: "+queryParamString+"\n"+
+		"pathParamString: "+pathParamString+"\n"+
+		"referer header param: "+referer;
+		return Response.status(200).entity(output).build();
 	}
 
 	@GET
