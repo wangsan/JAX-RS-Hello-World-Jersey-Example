@@ -39,6 +39,7 @@ public class HelloWorldService {
 //	@Produces({MediaType.APPLICATION_JSON})
 	@ApiOperation(
 			value="Post a JSON file and get a response",
+			response=SimplePostSuccessResponse.class,
 			notes="##Pass something interesting!\n"+
 			"This is a simple method I wrote to test posting JSON and documenting it with Swagger.\n\n"+
 			"Markdown can do cool stuff like:\n"+
