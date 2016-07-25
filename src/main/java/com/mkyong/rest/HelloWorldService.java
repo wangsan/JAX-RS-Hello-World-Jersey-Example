@@ -56,7 +56,7 @@ public class HelloWorldService {
 	@ApiResponses(
 			value = {
 					@ApiResponse(code = 400, message = "Invalid input"),
-					@ApiResponse(code = 200, message = "It's all good", response=SimplePostSuccessResponse.class)
+					@ApiResponse(code = 200, message = "It's all good")
 			})
 	public Response simplePost(
 			@ApiParam(value="Input JSON", required=true)
