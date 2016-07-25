@@ -64,13 +64,16 @@ public class HelloWorldService {
 			){
 		String output;
 //		try {
-			output = "Hello! I got your file.\nThe value of thing_id is "+inputJson.getThing_id()+
-					"\nand the value of thing_value is "+inputJson.getThing_value();
+			SimplePostSuccessResponse jsonResponse = new SimplePostSuccessResponse();
+			output = "Hello! I got your file. The value of thing_id is "+inputJson.getThing_id()+
+					" and the value of thing_value is "+inputJson.getThing_value();
+			jsonResponse.setMessage(output);
+			jsonResponse.setMessageNumber(new Integer(12));
 //		} catch (JSONException e) {
 //			String errorMessage = "Bad JSON!";
 //			return Response.status(400).entity(errorMessage).build();
 //		}
-		return Response.status(200).entity(output).build();
+		return Response.status(200).entity(jsonResponse).build();
 	}
 
 	@POST
