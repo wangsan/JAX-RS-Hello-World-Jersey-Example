@@ -39,8 +39,8 @@ public class HelloWorldService {
     				"| col 2 is | centered | $12 |\n"+
     				"| zebra stripes | are neat | $1 |")
 	public Response getMsg(
-			@PathParam("param") 
 			@ApiParam(value="This is a string that you put in the URL.", required=true)
+			@PathParam("param") 
 			String msg) {
 
 		String output = "Your path parameter was : " + msg;
