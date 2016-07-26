@@ -54,6 +54,7 @@ public class HelloWorldService {
 	@Produces({MediaType.APPLICATION_JSON})
 	@ApiOperation(
 			value="This command returns a JSON object",
+			notes="This method has no parameters",
 			response=SimpleJSONResponse.class)
 	public Response simpleJSONReturn(){
 		SimpleJSONResponse responseJSON = new SimpleJSONResponse();
