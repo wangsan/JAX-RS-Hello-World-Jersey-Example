@@ -118,25 +118,6 @@ public class HelloWorldService {
 		}
 	}
 
-	@POST
-	@Path("/paramtest")
-	@Consumes({MediaType.APPLICATION_JSON})
-	@ApiOperation(
-			value="This command takes parameters and does stuff with them",
-			notes="It's a slightly more complicated command.")
-	@ApiResponses(
-			value = {
-					@ApiResponse(code = 400, message = "Invalid input"),
-					@ApiResponse(code = 200, message = "It's all good")
-			})
-	public Response paramtest(
-			@ApiParam(value="Input JSON", required=true)
-			SomeOtherJSONObject inputJson
-			){
-
-		return Response.status(200).entity(inputJson.toString()).build();
-
-	}
 	
 	@GET
 	@Path("/pathparams/{pathParamString}")
