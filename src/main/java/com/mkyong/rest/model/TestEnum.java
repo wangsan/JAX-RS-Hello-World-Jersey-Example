@@ -1,4 +1,4 @@
-package com.mkyong.rest;
+package com.mkyong.rest.model;
 
 public enum TestEnum {
 	

@@ -11,6 +11,10 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.mkyong.rest.model.MyTestJSONObject;
+import com.mkyong.rest.model.SimpleJSONResponse;
+import com.mkyong.rest.model.SimplePostSuccessResponse;
+
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
