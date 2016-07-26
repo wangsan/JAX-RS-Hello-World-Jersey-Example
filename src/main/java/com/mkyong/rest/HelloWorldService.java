@@ -94,6 +94,29 @@ public class HelloWorldService {
 //		}
 		return Response.status(200).entity(jsonResponse).build();
 	}
+	
+	@GET
+	@Path("/responseCodeTest")
+	@ApiOperation(
+			value="Test response codes",
+			notes="This method is for testing response codes."
+			)
+	@ApiResponses(
+			value = {
+					@ApiResponse(code = 400, message = "Invalid input"),
+					@ApiResponse(code = 200, message = "That was a good parameter")
+			})
+	public Response responseCodeTest(
+			@ApiParam(value="Send 200 for a 200 response or something else for a 400 response")
+			@QueryParam("queryParam")
+			String queryParam
+			){
+		if (queryParam.equals("200")){
+			return Response.status(200).entity("OK!").build();
+		}else{
+			return Response.status(400).entity("No. You sent "+queryParam).build();
+		}
+	}
 
 	@POST
 	@Path("/paramtest")
