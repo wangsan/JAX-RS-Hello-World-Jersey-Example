@@ -25,7 +25,7 @@ public class HelloWorldService {
 	@Path("/{param}")
     @ApiOperation(
     		value="This command prints the message that you include in the {param} URL parameter.",
-    		notes="It's a really simple command."+
+    		notes="It's a really simple command.\n"+
     				"Here's some Markdown documentation: \n\n"+
     				"Markdown can do cool stuff like:\n"+
     				"* Bulleted lists\n"+
